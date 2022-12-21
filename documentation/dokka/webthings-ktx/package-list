@@ -1,0 +1,11 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:studio.badwolfdev.webthings_ktx////PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/index.html
+$dokka.location:studio.badwolfdev.webthings_ktx/Const///PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-const/index.html
+$dokka.location:studio.badwolfdev.webthings_ktx/Const/RETURN_OK/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-const/-r-e-t-u-r-n_-o-k.html
+$dokka.location:studio.badwolfdev.webthings_ktx/Const/WRONG_SERVER_ADDRESS/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-const/-w-r-o-n-g_-s-e-r-v-e-r_-a-d-d-r-e-s-s.html
+$dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer///PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/index.html
+$dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/WebthingsServer/#kotlin.String#kotlin.Int/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/-webthings-server.html
+$dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/isGatewayReachable/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/is-gateway-reachable.html
+studio.badwolfdev.webthings_ktx
+

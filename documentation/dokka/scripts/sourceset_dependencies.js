@@ -1,0 +1,1 @@
+sourceset_dependencies='{":webthings-ktx:dokkaHtml/androidTestRelease":[],":webthings-ktx:dokkaHtml/debug":[],":webthings-ktx:dokkaHtml/main":[],":webthings-ktx:dokkaHtml/release":[],":webthings-ktx:dokkaHtml/testFixtures":[],":webthings-ktx:dokkaHtml/testFixturesDebug":[],":webthings-ktx:dokkaHtml/testFixturesRelease":[]}'
