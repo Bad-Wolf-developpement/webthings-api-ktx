@@ -60,23 +60,4 @@ abstract class WebthingsServer(
             RETURN_OK
         }
     }
-
-    fun doLogin(onSuccessActivity: ComponentActivity, onFailedActivity: ComponentActivity): ActivityResultLauncher<Intent> {
-        //TODO rename this
-        val activity = ctx as ComponentActivity
-        Log.d(TAG, "url: ${gatewayUrl}/things")
-        val getResult = activity.registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
-            when(result.resultCode){
-                Activity.RESULT_OK -> {
-                    Log.d(TAG,"Activity Success")
-                }
-                else -> {
-                    Log.d(TAG, "Activity Failed")
-                }
-            }
-
-        }
-        return getResult
-        //ctx.startActivityForResult(oauth.authIntent,0, oauth.RC_AUTH)
-    }
 }
