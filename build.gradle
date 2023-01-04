@@ -36,7 +36,7 @@ apply plugin: 'org.jetbrains.dokka'
 tasks.dokkaHtml.configure{
 
     //set the output directory
-    outputDirectory.set(file("$buildDir/../documentation/dokka"))
+    outputDirectory.set(file("$buildDir/../docs"))
 
     //Set module name displayed in the final output
     moduleName.set("${project.name}")
