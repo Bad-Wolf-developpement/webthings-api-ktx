@@ -5,11 +5,11 @@
 
 ## Source
 
-[webthings-api-ktx on github](https://github.com/Bad-Wolf-developpement/webthings-api-ktx)
+[webthings-api-ktx](https://github.com/Bad-Wolf-developpement/webthings-api-ktx): Github Repository
 
-# References
+## References
 
-[Webthings.io website](https://webthings.io)
+[Webthings.io](https://webthings.io): Official Webthings.io Website
  
 # Package studio.badwolfdev.webthings_ktx
  This is the Base package, it contain the Webthings Server object representing a gateway
