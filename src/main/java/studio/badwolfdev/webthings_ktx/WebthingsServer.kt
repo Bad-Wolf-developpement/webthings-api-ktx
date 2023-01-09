@@ -10,6 +10,7 @@ import android.util.Patterns
 import androidx.activity.ComponentActivity
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.VisibleForTesting
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import studio.badwolfdev.webthings_ktx.Const.RETURN_OK
@@ -128,7 +129,7 @@ interface WebthingsServer {
      *
      * @return [WRONG_SERVER_ADDRESS] if url is invalid or [RETURN_OK]
      */
-    private fun validateUrl(url: String): Int {
+    fun validateUrl(url: String): Int {
        //TODO instead of return throws exception
         return if (!Patterns.WEB_URL.matcher(url).matches())
             WRONG_SERVER_ADDRESS
@@ -140,7 +141,7 @@ interface WebthingsServer {
     }
 
     /**
-     * Extension method to add private fun to test is gateway is reachable
+     * method to test if the gateway is reachable
      *
      * @return Boolean true if uri is reachable
      */
