@@ -13,3 +13,6 @@
  
 # Package studio.badwolfdev.webthings_ktx
  This is the Base package, it contain the Webthings Server object representing a gateway
+
+# Package studio.badwolfdev.webthings_ktx.api
+ This package hold the api related function and class

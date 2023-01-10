@@ -124,12 +124,24 @@ interface WebthingsServer {
             }
         }
 
+    val things: List<Thing>
+        get() = emptyList()
+
+    /**
+     * Method to get the list of things from the gateway
+     *
+     * The function will populate a list of [Thing] object
+     */
+    fun getThings(){
+
+    }
+
     /**
      * Method to test if the url is valid
      *
      * @return [WRONG_SERVER_ADDRESS] if url is invalid or [RETURN_OK]
      */
-    fun validateUrl(url: String): Int {
+    private fun validateUrl(url: String): Int {
        //TODO instead of return throws exception
         return if (!Patterns.WEB_URL.matcher(url).matches())
             WRONG_SERVER_ADDRESS
