@@ -19,3 +19,6 @@
 
 # Package studio.badwolfdev.webthings_ktx.api
  This package hold the api related function and class
+ 
+# Package studio.badwolfdev.webthings_ktx.thing_object
+ This package hold the object related to the thing, thing itself, property, etc...

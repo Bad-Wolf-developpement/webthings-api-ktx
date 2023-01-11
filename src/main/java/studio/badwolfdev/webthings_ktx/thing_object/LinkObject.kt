@@ -14,6 +14,7 @@ data class LinkObject(
     @Expose
     @SerializedName("rel")
     val relation: String,
+    //TODO create a list of valid relation
 
     @Expose
     @SerializedName("href")

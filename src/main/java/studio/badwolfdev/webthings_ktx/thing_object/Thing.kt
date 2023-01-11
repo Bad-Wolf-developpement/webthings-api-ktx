@@ -33,7 +33,7 @@ data class Thing(
 
     @Expose
     @SerializedName("properties")
-    val properties: Map<String, ThingProperty>,
+    val properties: Map<String, ThingProperty>,//TODO can we convert the map into a list?
 
     @Expose
     @SerializedName("actions")
