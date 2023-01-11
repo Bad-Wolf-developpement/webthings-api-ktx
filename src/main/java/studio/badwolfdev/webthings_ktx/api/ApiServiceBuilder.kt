@@ -46,6 +46,7 @@ object ApiServiceBuilder {
      * @return retrofit service
      */
     fun<T> buildService(httpClient: OkHttpClient.Builder?, baseUrl: String, service: Class<T>): T{
+        logging.level = HttpLoggingInterceptor.Level.NONE//TODO set this to BODY in debug and NONE in prod
         val client = if (httpClient != null){
             httpClient
                 .addInterceptor(logging)

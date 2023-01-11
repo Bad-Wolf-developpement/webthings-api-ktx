@@ -2,8 +2,7 @@ package studio.badwolfdev.webthings_ktx.api
 
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Headers
-import studio.badwolfdev.webthings_ktx.Thing
+import studio.badwolfdev.webthings_ktx.thing_object.Thing
 
 /**
  * interface for Retrofit Api

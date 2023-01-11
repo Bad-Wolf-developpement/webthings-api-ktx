@@ -3,6 +3,9 @@
 ## Description
  This library is used to communicate with a Webthings.io Gateway
 
+## Compatibility
+ This Library is currently compatible with the version 1.X of the Webthings.io gateway
+
 ## Source
 
 [webthings-api-ktx](https://github.com/Bad-Wolf-developpement/webthings-api-ktx): Github Repository

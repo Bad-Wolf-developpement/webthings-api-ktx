@@ -1,9 +1,19 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
+$dokka.location:studio.badwolfdev.webthings_ktx.api////PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx.api/index.html
+$dokka.location:studio.badwolfdev.webthings_ktx.api/ApiInterface///PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx.api/-api-interface/index.html
+$dokka.location:studio.badwolfdev.webthings_ktx.api/ApiInterface/getAllThings/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx.api/-api-interface/get-all-things.html
+$dokka.location:studio.badwolfdev.webthings_ktx.api/ApiService///PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx.api/-api-service/index.html
+$dokka.location:studio.badwolfdev.webthings_ktx.api/ApiService/ApiService/#kotlin.String#kotlin.String/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx.api/-api-service/-api-service.html
+$dokka.location:studio.badwolfdev.webthings_ktx.api/ApiService/getThingsList/#kotlin.Function1[retrofit2.Response[kotlin.collections.List[studio.badwolfdev.webthings_ktx.thing_object.Thing]]?,kotlin.Unit]/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx.api/-api-service/get-things-list.html
+$dokka.location:studio.badwolfdev.webthings_ktx.api/ApiServiceBuilder///PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx.api/-api-service-builder/index.html
+$dokka.location:studio.badwolfdev.webthings_ktx.api/ApiServiceBuilder/buildService/#okhttp3.OkHttpClient.Builder?#kotlin.String#java.lang.Class[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx.api/-api-service-builder/build-service.html
 $dokka.location:studio.badwolfdev.webthings_ktx////PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/index.html
 $dokka.location:studio.badwolfdev.webthings_ktx/Const///PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-const/index.html
 $dokka.location:studio.badwolfdev.webthings_ktx/Const/RETURN_OK/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-const/-r-e-t-u-r-n_-o-k.html
 $dokka.location:studio.badwolfdev.webthings_ktx/Const/WRONG_SERVER_ADDRESS/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-const/-w-r-o-n-g_-s-e-r-v-e-r_-a-d-d-r-e-s-s.html
+$dokka.location:studio.badwolfdev.webthings_ktx/Thing///PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-thing/index.html
+$dokka.location:studio.badwolfdev.webthings_ktx/Thing/Thing/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-thing/-thing.html
 $dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer///PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/index.html
 $dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/ctx/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/ctx.html
 $dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/fallbackDomain/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/fallback-domain.html
@@ -12,7 +22,11 @@ $dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/gatewayDomain/#/
 $dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/gatewayPort/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/gateway-port.html
 $dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/gatewayToken/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/gateway-token.html
 $dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/gatewayUri/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/gateway-uri.html
+$dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/getThings/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/get-things.html
 $dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/ssl/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/ssl.html
+$dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/things/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/things.html
 $dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/uriToUse/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/uri-to-use.html
+$dokka.location:studio.badwolfdev.webthings_ktx/WebthingsServer/webthingsApi/#/PointingToDeclaration/webthings-ktx/studio.badwolfdev.webthings_ktx/-webthings-server/webthings-api.html
 studio.badwolfdev.webthings_ktx
+studio.badwolfdev.webthings_ktx.api
 

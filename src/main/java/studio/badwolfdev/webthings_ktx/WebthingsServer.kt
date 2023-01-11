@@ -1,24 +1,17 @@
 package studio.badwolfdev.webthings_ktx
 
-import android.app.Activity
-import android.app.PendingIntent
 import android.content.Context
-import android.content.Intent
 import android.util.Log
 import okhttp3.HttpUrl
 import android.util.Patterns
-import androidx.activity.ComponentActivity
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.VisibleForTesting
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import studio.badwolfdev.webthings_ktx.Const.RETURN_OK
 import studio.badwolfdev.webthings_ktx.Const.WRONG_SERVER_ADDRESS
 import studio.badwolfdev.webthings_ktx.api.ApiService
+import studio.badwolfdev.webthings_ktx.thing_object.Thing
 import java.net.InetAddress
 import java.net.URI
-import java.net.URL
 
 private const val TAG = "WebthingsServer"
 /**

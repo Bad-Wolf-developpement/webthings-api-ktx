@@ -6,7 +6,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import studio.badwolfdev.webthings_ktx.Thing
+import studio.badwolfdev.webthings_ktx.thing_object.Thing
 
 /**
  * Class representing the Api Service to make api call
