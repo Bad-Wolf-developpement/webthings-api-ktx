@@ -15,6 +15,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import studio.badwolfdev.webthings_ktx.Const.RETURN_OK
 import studio.badwolfdev.webthings_ktx.Const.WRONG_SERVER_ADDRESS
+import studio.badwolfdev.webthings_ktx.api.ApiService
 import java.net.InetAddress
 import java.net.URI
 import java.net.URL
@@ -127,13 +128,35 @@ interface WebthingsServer {
     val things: List<Thing>
         get() = emptyList()
 
+    val webthingsApi: ApiService
+        get() = ApiService(
+            gatewayUri.toString(),//TODO should i move this to the getThings or similar for fallback check
+            gatewayToken
+        )
+
     /**
      * Method to get the list of things from the gateway
      *
      * The function will populate a list of [Thing] object
      */
     fun getThings(){
-
+        //TODO choose the uri to use before calling the action
+        //TODO url shouldn't have protocol in front
+        webthingsApi.getThingsList { response ->
+            if (response == null){
+                Log.d("TAG", "API CALL FAILED IN getThings")
+            }else{
+                when (response.code()){
+                    200 -> {
+                        Log.d("TAG", "API CALL SUCCESS, 200")
+                        Log.d("TAG", "response: ${response.body()}")
+                    }
+                    else -> {
+                        Log.d("TAG", "UNHANDLED ERROR: ${response}")
+                    }
+                }
+            }
+        }
     }
 
     /**
