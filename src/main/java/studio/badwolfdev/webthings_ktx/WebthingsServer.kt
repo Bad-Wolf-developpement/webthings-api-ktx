@@ -4,8 +4,10 @@ import android.content.Context
 import android.util.Log
 import okhttp3.HttpUrl
 import android.util.Patterns
+import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
+import retrofit2.Response
 import studio.badwolfdev.webthings_ktx.Const.RETURN_OK
 import studio.badwolfdev.webthings_ktx.Const.WRONG_SERVER_ADDRESS
 import studio.badwolfdev.webthings_ktx.api.ApiService
@@ -118,8 +120,7 @@ interface WebthingsServer {
             }
         }
 
-    val things: List<Thing>
-        get() = emptyList()
+    //var things: List<Thing>?
 
     val webthingsApi: ApiService
         get() = ApiService(
@@ -128,28 +129,44 @@ interface WebthingsServer {
         )
 
     /**
+     * Method who handle the response of the api call
+     *
+     * All Api call will call this once they get the response
+     * so you need to override this to handle the response
+     *
+     * @param code Http code of the transaction
+     * @param response [Response] received from retrofit
+     */
+    fun handleThingsResponse(code: Int?, response: List<Thing>?)
+
+    /**
      * Method to get the list of things from the gateway
      *
      * The function will populate a list of [Thing] object
      */
-    fun getThings(){
+    fun getThings() {
         //TODO choose the uri to use before calling the action
         //TODO url shouldn't have protocol in front
         webthingsApi.getThingsList { response ->
             if (response == null){
                 Log.d("TAG", "API CALL FAILED IN getThings")
+                handleThingsResponse(null, null)
             }else{
                 when (response.code()){
                     200 -> {
                         Log.d("TAG", "API CALL SUCCESS, 200")
                         Log.d("TAG", "response: ${response.body()}")
+                        handleThingsResponse(response.code(), response.body())
                     }
                     else -> {
                         Log.d("TAG", "UNHANDLED ERROR: ${response}")
+                        handleThingsResponse(response.code(), response.body())
+
                     }
                 }
             }
         }
+
     }
 
     /**
