@@ -6,6 +6,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import studio.badwolfdev.webthings_ktx.BuildConfig
 
 /**
  * Builder object for the Api Service
@@ -46,6 +47,7 @@ object ApiServiceBuilder {
      * @return retrofit service
      */
     fun<T> buildService(httpClient: OkHttpClient.Builder?, baseUrl: String, service: Class<T>): T{
+        //if BuildConfig.BUILD_TYPE
         logging.level = HttpLoggingInterceptor.Level.NONE//TODO set this to BODY in debug and NONE in prod
         val client = if (httpClient != null){
             httpClient

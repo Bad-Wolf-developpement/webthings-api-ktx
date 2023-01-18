@@ -47,13 +47,13 @@ data class Thing(
     @SerializedName("links")
     val links: List<LinkObject>,
 
-    @Expose
-    @SerializedName("layoutIndex")//TODO is this usefull to keep
-    val layoutIndex: Int,
+    /*@Expose
+    @SerializedName("layoutIndex")// is this usefull to keep
+    val layoutIndex: Int,*/
 
-    @Expose
-    @SerializedName("selectedCapability")//TODO is this usefull to keep
-    val selectedCapabilities: String,
+    /*@Expose
+    @SerializedName("selectedCapability")//is this usefull to keep
+    val selectedCapabilities: String,*/
 
     @Expose
     @SerializedName("iconHref")
@@ -68,5 +68,5 @@ data class Thing(
     val baseUrl: String,
 
     /*@SerializedName("securityDefinitions")
-    val securityDefinitions: *///TODO is this usefull to keep here, if yes create a security definitons object
+    val securityDefinitions: *///is this usefull to keep here, if yes create a security definitons object
 )

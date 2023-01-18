@@ -22,3 +22,6 @@
  
 # Package studio.badwolfdev.webthings_ktx.thing_object
  This package hold the object related to the thing, thing itself, property, etc...
+
+# Package studio.badwolfdev.webthings_ktx.exceptions
+  This package hold the custom exceptions object
