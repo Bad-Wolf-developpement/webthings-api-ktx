@@ -124,7 +124,7 @@ interface WebthingsServer {
 
     val webthingsApi: ApiService
         get() = ApiService(
-            gatewayUri.toString(),//TODO should i move this to the getThings or similar for fallback check
+            uriToUse.toString(),//TODO should i move this to the getThings or similar for fallback check
             gatewayToken
         )
 
@@ -140,6 +140,18 @@ interface WebthingsServer {
     fun handleThingsResponse(code: Int?, response: List<Thing>?)
 
     /**
+     * Method who handle the response of the api call
+     *
+     * All Api call will call this once they get the response
+     * so you need to override this to handle the response
+     *
+     * @param code Http code of the transaction
+     * @param response [Response] received from retrofit
+     * @param throwable [Throwable] error received
+     */
+    fun handleRetrofitError(throwable: Throwable)
+
+    /**
      * Method to get the list of things from the gateway
      *
      * The function will populate a list of [Thing] object
@@ -147,10 +159,10 @@ interface WebthingsServer {
     fun getThings() {
         //TODO choose the uri to use before calling the action
         //TODO url shouldn't have protocol in front
-        webthingsApi.getThingsList { response ->
+        webthingsApi.getThingsList { response, throwable ->
             if (response == null){
                 Log.d("TAG", "API CALL FAILED IN getThings")
-                handleThingsResponse(null, null)
+                handleRetrofitError(throwable!!)
             }else{
                 when (response.code()){
                     200 -> {

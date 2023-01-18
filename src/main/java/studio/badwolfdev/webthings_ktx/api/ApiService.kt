@@ -12,6 +12,7 @@ import studio.badwolfdev.webthings_ktx.thing_object.Thing
  * Class representing the Api Service to make api call
  *
  * @param baseUrl Base url of the gateway api
+ * @param token Token from webthings gateway
  *
  * @author Arist0v
  * @author Bad Wolf Developpement
@@ -20,17 +21,22 @@ class ApiService(
     private val baseUrl: String,
     private val token: String) {
 
+    private val url: String
+    get() {
+        return if (baseUrl.last() == '/'){
+            baseUrl
+        }else{
+            "$baseUrl/"
+        }
+    }
+
     /**
      * get the list of all things from the gateway
      *
-     * @param token Webthings api token
      * @param onResult action to perform once result is received, nullable, receive the response as a param
      */
-    init {
-        //todo if baseurl didn'T end by / add a /
-    }
     fun getThingsList(
-        onResult: (Response<List<Thing>>?)-> Unit){
+        onResult: (Response<List<Thing>>?, Throwable?)-> Unit){
         val httpClient = OkHttpClient.Builder().apply {
             //TODO add logging interceptor
             addInterceptor(
@@ -44,16 +50,16 @@ class ApiService(
             )
         }
 
-        val retrofit = ApiServiceBuilder.buildService(httpClient, baseUrl, ApiInterface::class.java)
+        val retrofit = ApiServiceBuilder.buildService(httpClient, url, ApiInterface::class.java)
         retrofit.getAllThings().enqueue(
             object : Callback<List<Thing>>{
                 override fun onResponse(call: Call<List<Thing>>, response: Response<List<Thing>>) {
-                    onResult(response)
+                    onResult(response, null)
                 }
 
                 override fun onFailure(call: Call<List<Thing>>, t: Throwable) {
-                    Log.e("GETTHINGS", "Api call failed: ${t}")
-                    onResult(null)//TODO send the throwable to onResult? for error handling
+                    Log.e("GETTHINGS", "Api call failed: $t")
+                    onResult(null, t)
                 }
 
 

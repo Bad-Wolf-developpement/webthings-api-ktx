@@ -6,6 +6,9 @@ import studio.badwolfdev.webthings_ktx.thing_object.Thing
 
 /**
  * interface for Retrofit Api
+ *
+ * @author Arist0v
+ * @author Bad Wolf Developpement
  */
 interface ApiInterface {
 
