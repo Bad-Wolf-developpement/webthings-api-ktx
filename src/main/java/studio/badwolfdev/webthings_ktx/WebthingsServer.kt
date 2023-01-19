@@ -111,12 +111,14 @@ interface WebthingsServer {
      */
     val uriToUse: URI?
         get() {
+            //TODO webthings proxy didn'T forward ping find a workaround
             return if (isGatewayReachable(gatewayUri)){
                 gatewayUri
             }else if (isGatewayReachable(fallbackUri)){
                 fallbackUri
             }else{
                 null
+                //TODO show error message
             }
         }
 
@@ -204,7 +206,7 @@ interface WebthingsServer {
      */
     private fun isGatewayReachable(
         uri: URI,
-        timeout: Int = 1000): Boolean {
+        timeout: Int = 3000): Boolean {
         Log.d(TAG, "Looking if gateway is reachable on : $uri")
 
         val status = runBlocking(Dispatchers.IO) {
@@ -212,6 +214,7 @@ interface WebthingsServer {
             Log.d(TAG, "testing access to domain: ${uri.host}")
             InetAddress.getByName(uri.host).isReachable(timeout)
         }
+        Log.d(TAG, "is reachable: $status")
         return status
     }
 }

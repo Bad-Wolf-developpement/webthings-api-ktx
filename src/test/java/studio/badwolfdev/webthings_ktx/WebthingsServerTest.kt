@@ -8,12 +8,8 @@ import io.mockk.mockkStatic
 import org.junit.Assert.*
 import org.junit.Test
 
-class WebthingsServer_test :WebthingsServer{
+class WebthingsServerTest{
 
-
-    override val ctx: Context = mockk(relaxed = true)
-    override val gatewayDomain: String = ""
-    override val gatewayToken: String = ""
 
     //Test wide mocking:
     init {

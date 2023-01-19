@@ -38,7 +38,6 @@ class ApiService(
     fun getThingsList(
         onResult: (Response<List<Thing>>?, Throwable?)-> Unit){
         val httpClient = OkHttpClient.Builder().apply {
-            //TODO add logging interceptor
             addInterceptor(
                 Interceptor { chain ->
                     val builder = chain.request().newBuilder()

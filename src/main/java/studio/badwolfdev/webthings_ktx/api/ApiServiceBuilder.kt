@@ -1,5 +1,6 @@
 package studio.badwolfdev.webthings_ktx.api
 
+import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
@@ -48,15 +49,36 @@ object ApiServiceBuilder {
      */
     fun<T> buildService(httpClient: OkHttpClient.Builder?, baseUrl: String, service: Class<T>): T{
         //if BuildConfig.BUILD_TYPE
+        Log.d("DEBUG", "baseURL: $baseUrl")
+        Log.d("DEBUG", "Httpclient: $httpClient")
         logging.level = HttpLoggingInterceptor.Level.NONE//TODO set this to BODY in debug and NONE in prod
         val client = if (httpClient != null){
-            httpClient
-                .addInterceptor(logging)
-                .build()
-            }else {
-                OkHttpClient.Builder()
+            if (baseUrl != "https://gateway.local/") {
+                //TODO create a trusted ssl url list that must be populated
+                Log.d("DEBUG", "http client NOT null")
+                httpClient
                     .addInterceptor(logging)
                     .build()
+                }else{
+                    UnsafeOkHttpClient
+                        .getUnsafeClient(httpClient)
+                        .addInterceptor(logging)
+                        .build()
+                }
+            }else {
+            Log.d("DEBUG", "http client null")
+                if (baseUrl != "https://gateway.local/") {
+                    Log.d("DEBUG", "url NOT gateway.local")
+                    OkHttpClient.Builder()
+                        .addInterceptor(logging)
+                        .build()
+                }else{
+                    //get unsafe http client
+                    Log.d("DEBUG", "url gateway.local")
+                    UnsafeOkHttpClient.getUnsafeClient(OkHttpClient.Builder())
+                        .addInterceptor(logging)
+                        .build()
+                }
             }
 
         return retrofit
