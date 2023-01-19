@@ -204,7 +204,7 @@ interface WebthingsServer {
      *
      * @return Boolean true if uri is reachable
      */
-    private fun isGatewayReachable(
+    fun isGatewayReachable(
         uri: URI,
         timeout: Int = 3000): Boolean {
         Log.d(TAG, "Looking if gateway is reachable on : $uri")
